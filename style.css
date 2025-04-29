@@ -1,0 +1,260 @@
+/* Reset some default browser styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and General */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #301733; /* Dark background */
+    color: #ffffff; /* White text */
+    line-height: 1.6;
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d1117;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffffff;
+    border-top: 5px solid #a41e83; /* Blue */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Navbar */
+#header-nav {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff0aa1;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,..."); /* You can customize the icon */
+}
+
+/* Hero Section */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.padding-medium {
+    padding: 4rem 2rem;
+}
+
+.padding-side {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.banner-size {
+    font-size: 2.8rem;
+}
+
+#hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Buttons */
+.button, 
+.btn {
+    background-color: #ff0aa1; /* Bootstrap blue */
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.8rem 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.button:hover, 
+.btn:hover {
+    background-color: #ffaade; /* Darker blue */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+}
+
+/* Arrow in button */
+.arrow-right {
+    fill: #ffffff;
+}
+
+/* Social Icons */
+.social-icon {
+    fill: #ffffff;
+    transition: fill 0.3s ease;
+}
+
+.nav-link:hover .social-icon {
+    fill: #f30092;
+}
+
+/* Offcanvas menu */
+.offcanvas {
+    background-color: #0d1117;
+}
+
+/* Responsive Text Size */
+@media (max-width: 768px) {
+    .banner-size {
+        font-size: 2rem;
+    }
+    #hero {
+        text-align: center;
+    }
+}
+
+/* Extra */
+.text-primary {
+    color: #ff04ab !important;
+}
+
+#side-nav {
+    position: fixed; /* Fix the position on the page */
+    top: 0; /* Align it to the top */
+    right: 0; /* Align it to the right */
+    z-index: 9999; /* Ensure it stays above other content */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Align items horizontally */
+    padding: 10px 20px; /* Adjust padding for the navbar */
+    border-radius: 5px; /* Optional: rounded corners */
+    color: #ff0aa1;
+}
+
+/* Make the navigation items horizontal */
+.navbar-nav {
+    display: flex; /* Arrange items in a row */
+    list-style: none; /* Remove default list styling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-item {
+    margin-right: 15px; /* Space between items */
+}
+
+.nav-link {
+    color: white; /* Set text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Adjust font size */
+}
+
+/* Add hover effect on items */
+.nav-link:hover {
+    color: #f0f0f0; /* Light color on hover */
+}
+
+/* Style the dropdown menu */
+.dropdown-menu {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position the dropdown items */
+    background-color: #333; /* Dropdown background color */
+    border-radius: 5px; /* Optional: rounded corners */
+    padding: 10px;
+    z-index: 10000;
+}
+
+.dropdown-menu .dropdown-item {
+    color: white; /* Dropdown item text color */
+}
+
+/* Show dropdown when hovered */
+.nav-item:hover .dropdown-menu {
+    display: block; /* Display the dropdown when hovering over the parent */
+}
+
+/* Optional: Adjust for mobile responsiveness */
+@media (max-width: 768px) {
+    #side-nav {
+        position: static; /* Make it static on small screens */
+        display: block; /* Stack items vertically */
+        margin-top: 20px; /* Add margin for better spacing */
+        padding: 10px 0; /* Adjust padding */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .nav-item {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Add spacing between items */
+    }
+}
+/* Position the navbar at the bottom */
+#header-nav {
+    position: fixed; /* Fix the navbar at a specific position */
+    bottom: 0; /* Align the navbar to the bottom */
+    left: 10%; /* Ensure it spans the full width */
+    width: 50%; /* Ensure it takes the full width of the screen */
+    z-index: 1000; /* Ensure it stays above other content */
+    padding: 10px 0; /* Adjust padding for better spacing */
+    justify-content: center; /* Align items in the center */
+}
+
+/* Adjust navbar links inside the offcanvas */
+#offcanvasNavbar .navbar-nav {
+    display: flex; /* Arrange items horizontally */
+    justify-content: center; /* Align items in the center */
+}
+
+#offcanvasNavbar .navbar-nav .nav-item {
+    margin-right: 15px; /* Space between items */
+}
+
+#offcanvasNavbar .navbar-nav .nav-link {
+    color: white; /* Set text color */
+}
+
+/* Social Links in Navbar */
+#offcanvasNavbar .navbar-nav .nav-link svg {
+    fill: white; /* Set SVG icon color */
+}
+
+/* Optional: Adjust for mobile responsiveness */
+@media (max-width: 768px) {
+    #header-nav {
+        position: fixed; /* Keep it fixed on small screens */
+        bottom: 0;
+        width: 100%; /* Ensure it spans the full width */
+    }
+
+    .navbar-nav {
+        flex-direction: row; /* Ensure items stay in row for small screens */
+    }
+}
